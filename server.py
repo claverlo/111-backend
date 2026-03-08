@@ -9,7 +9,7 @@ DB_NAME = "budget_manager.db"
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)  # Opens a connection to the D.B. file named 'budget_manager.db'
-    cursor = conn.cursor()  # Creates a cursor/tool that lets us send commands (SELECT, INSERT...) to the DB TIME:1:00 hour
+    cursor = conn.cursor()  # Creates a cursor/tool that lets us send commands (SELECT, INSERT...) to the DB TIME:1:00 hour s
 
 
 # cursor.execute()

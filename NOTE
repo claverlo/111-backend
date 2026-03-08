@@ -1,0 +1,131 @@
+ Create Venv ------
+WINDOWS:   py/python -m venv venv
+MacOS:     python3 -m venv venv
+
+------ Activate venv ------
+WIN:   venv\Scripts\activate
+MacOS: source venv/bin/activate
+
+------ Install Flask ------
+pip install Flask
+
+------ Run server.py file ------
+WIN:   py/python server.py
+MacOS: python3 server.py
+
+
+
+
+------ Create Venv ------
+WINDOWS:   py/python -m venv venv
+MacOS:     python3 -m venv venv
+
+------ Activate venv ------
+WIN:   venv\Scripts\Activate
+MacOS: source venv/bin/activate
+
+------ Install Flask ------
+pip install Flask
+
+------ Run server.py file ------
+WIN:   py/python server.py
+MacOS: python3 server.py
+
+What is SQL?
+
+SQL (Structured Query Language) is the standard language used to interact with relational databases.
+
+Key Facts About SQL:
+
+• CRUD Operations – lets you Create, Read, Update, and Delete data with simple, declarative commands
+
+• Cross-Compatible – works with many database engines (SQLite, MySQL, PostgreSQL, and SQL Server)
+
+• Declarative Syntax – you describe what you want, not how to get it
+
+• Powerful Queries – supports joins, filters, aggregations, and subqueries for advanced data manipulation
+
+• Backend Essential – widely used in APIs, web apps, and server-side logic
+
+• Production-Ready – powers dashboards, reporting tools, and scalable enterprise systems
+
+++++++++++++++++
+What are SQLite, MySQL, PostgreSQL?
+
+These are database engines, software systems that store, manage, and retrieve data using SQL.
+
+DBMS (Database Management System)
+
+Database Engine | Description | Uses SQL? | Common Use Cases
+
+SQLite | Lightweight, file-based database. No server needed. | Yes | Mobile apps, prototypes, small projects
+
+MySQL | Popular open-source client-server database. Fast and widely supported. | Yes | Web applications, CMS platforms (e.g., WordPress)
+
+PostgreSQL | Advanced, open-source database with powerful features. | Yes | APIs, enterprise systems, data analytics
+
+
++++++++++++++++++++++
+CRUD Operations in SQL
+
+CRUD stands for:
+
+Operation | SQL Command | Description
+
+Create | INSERT INTO | Adds new records
+(API equivalent: POST)
+
+Read | SELECT | Retrieves data
+(API equivalent: GET)
+
+Update | UPDATE | Modifies existing records
+(API equivalent: PUT)
+
+Delete | DELETE FROM | Removes records
+(API equivalent: DELETE)
+
+Example Table (Database Table)
+
+Table name: coupons
+
+Columns:
+-id
+-discount
+-name
+
+Key SQL commands include:
+
+SQL Syntax | Purpose
+
+SELECT column FROM table | Fetch data
+
+WHERE | Filter results
+
+ORDER BY | Sort results
+
+LIMIT | Restrict number of rows
+
+INSERT INTO, UPDATE, DELETE | Modify data
+
+
++++++++++++++++
+Real-World Use Cases
+
+Common Use Cases for Relational Databases
+
+• Login systems and user authentication
+
+• Inventory and product management
+
+• Analytics dashboards and reports
+
+• APIs that serve structured data
+
+Relational databases are widely used in:
+
+• Web development
+
+• Data science
+
+• Enterprise systems
++++++++++++++++++++++++++++++++++

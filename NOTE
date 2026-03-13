@@ -129,3 +129,52 @@ Relational databases are widely used in:
 
 • Enterprise systems
 +++++++++++++++++++++++++++++++++
+
+
+cursor.execute(""" https://blog.paulcoding.com/posts/sqlite3-cheatsheet/ or [w3 scool](https://blog.paulcoding.com/posts/sqlite3-cheatsheet/)s
+  CREATE TABLE IF NOT EXISTS users (  # 'users is the table name'/ You use CREATE TABLE IF NOT EXISTS so the 
+  database does not give an error if the table is already there. When the program runs, 
+  the database first checks if the users table exists. If it does not exist, it creates the table. 
+  If it already exists, the database simply does nothing and the program continues running normally. 
+  This makes the program safe to run multiple times without crashing.
+
+    -
+    -- It means the database will automatically number every row.
+    -- id = name of the column
+    -- INTEGER = stores numbers
+    -- PRIMARY KEY = unique ID for each row
+    -- AUTOINCREMENT = automatically adds 1 for every new row
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+  )
+""")
+
+
+title TEXT
+This column stores the title of the record as text. It can contain words or letters.
+
+description TEXT NOT NULL
+This column stores a description as text. NOT NULL means it cannot be empty.
+
+amount INT NOT NULL
+This column stores a number (like money or quantity). INT means integer. NOT NULL means a value is required.
+
+date TEXT NOT NULL
+This column stores the date as text (for example "2026-03-11"). It cannot be empty.
+
+category TEXT NOT NULL
+This column stores the category name as text (like "food", "rent", "transport"). It must have a value.
+
+
+ "INSERT INTO users (username, password) VALUES (?, ?)"
+ INSERT INTO users → add a new row to the "users" table
+ (username, password) → the columns where the data will go
+ VALUES (?, ?) → placeholders for the values that will be inserted
+
+ (username, password)
+ these are the actual values that replace the ? placeholders
+ example: if username="leo" and password="1234"
+ the database will insert ("leo", "1234") into the users table
+

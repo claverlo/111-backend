@@ -2,7 +2,7 @@
 # 1. “Python, go inside the flask library and bring me three tools so I can use them in this file.” 1. Flask 2.jsonfy 3. and request 
 # 1. Flask   - used to create the web app
 # 2. jsonify - used to send JSON responses
-# 3. request - used to read incoming request data
+# 3. request - used to read incoming request data a  dfge
 from flask import Flask, jsonify, request
 
 app = Flask(__name__) ## app = Flask(__name__) means you are creating the Flask web application and storing it in the variable named app.
@@ -14,7 +14,7 @@ import sqlite3 # “Bring in the SQLite database library so Python can work with
 # pupose of this is import sqlite3 loads the SQLite library so your Python program can create, read, update, and save data in the budget_manager.db database file.
 
 
-DB_NAME = "budget_manager.db" # Variable name  is the DB_NAME and Value stored  is the "budget_manager.db" and 
+DB_NAME = "budget_manager.db" # Variable name a  is the DB_NAME and Value stored  is the "budget_manager.db" and 
 # DB_NAME = "budget_manager.db"-# the purpsoe of this is to  saves the name of the database file in a variable so the program can use it later.
 # DB_NAME created by the programmer.(.db) tells people (and tools) that the file is a database file.) but the budget_manager is also chose by the programer.
 

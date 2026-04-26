@@ -187,7 +187,7 @@ def delete_user(user_id):
     }), 200
 
 
-# ------------ Expenses ------------
+
 @app.post('/api/expenses')
 def create_expense():
     new_expense = request.get_json()
@@ -239,6 +239,10 @@ def get_expense_by_id_from_db(expense_id):
     cursor.execute("SELECT * FROM expenses WHERE id=?", (expense_id,))
     row = cursor.fetchone()
     conn.close()
+
+    if not row:
+        return None
+
     return dict(row)
 
 
@@ -259,7 +263,7 @@ def update_expense_by_id_from_db(expense_id, expense_data):
     conn.close()
 
 
-# ------ Expenses Endpoints ---------
+
 # GET all the expenses
 @app.get('/api/expenses')
 def get_expenses():
@@ -275,6 +279,13 @@ def get_expenses():
 @app.get('/api/expenses/<int:expense_id>')
 def get_expense_by_id(expense_id):
     expense = get_expense_by_id_from_db(expense_id)
+
+    if not expense:
+        return jsonify({
+            "success": False,
+            "message": "Expense not found"
+        }), 404
+
     return jsonify({
         "success": True,
         "message": "Expense retrieved successfully",
@@ -284,11 +295,44 @@ def get_expense_by_id(expense_id):
 
 @app.put('/api/expenses/<int:expense_id>')
 def update_expense(expense_id):
+    expense = get_expense_by_id_from_db(expense_id)
+
+    if not expense:
+        return jsonify({
+            "success": False,
+            "message": "Expense not found"
+        }), 404
+
     updated_expense = request.get_json()
     update_expense_by_id_from_db(expense_id, updated_expense)
     return jsonify({
         "success": True,
         "message": "Expense updated successfully"
+    }), 200
+
+
+@app.delete('/api/expenses/<int:expense_id>')
+def delete_expense(expense_id):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM expenses WHERE id=?", (expense_id,))
+    row = cursor.fetchone()
+
+    if not row:
+        conn.close()
+        return jsonify({
+            "success": False,
+            "message": "Expense not found"
+        }), 404
+
+    cursor.execute("DELETE FROM expenses WHERE id=?", (expense_id,))
+    conn.commit()
+    conn.close()
+
+    return jsonify({
+        "success": True,
+        "message": "Expense deleted successfully"
     }), 200
 
 
